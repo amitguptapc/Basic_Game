@@ -24,13 +24,15 @@ public class Demo implements KeyListener, MouseListener {
     private static JPanel p;
     public static void main(String[] args) {
         JFrame f = new JFrame();
-         p = new JPanel();
+        p = new JPanel();
         p.setPreferredSize(new Dimension(800, 450));
         f.add(p);
         f.pack();
         p.setFocusable(true);
         p.requestFocus();
         f.setLocationRelativeTo(null);
+        f.setResizable(false);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.setVisible(true);
         try {
             Thread.sleep(200);
@@ -165,7 +167,7 @@ public class Demo implements KeyListener, MouseListener {
             if(block1XCord<=-20)
             {
                 if(block1Visible)
-                Demo.score+=10;
+                    Demo.score+=10;
                 block1XCord=980;
                 block1Visible=true;
             }
@@ -244,15 +246,15 @@ public class Demo implements KeyListener, MouseListener {
             g.drawString("Your Score : "+Demo.score,310,50);
             g.drawImage(playerImage, playerXCord, Demo.yCord, null);
             if(block1Visible)
-            g.drawImage(block1Image, block1XCord,355 , null);
+                g.drawImage(block1Image, block1XCord,355 , null);
             if(block2Visible)
-            g.drawImage(block2Image, block2XCord,355 , null);
+                g.drawImage(block2Image, block2XCord,355 , null);
             if(block3Visible)
-            g.drawImage(block3Image, block3XCord,355 , null);
+                g.drawImage(block3Image, block3XCord,355 , null);
             if(block4Visible)
-            g.drawImage(block4Image, block4XCord,355 , null);
+                g.drawImage(block4Image, block4XCord,355 , null);
             if(block5Visible)
-            g.drawImage(block5Image, block5XCord,355 , null);
+                g.drawImage(block5Image, block5XCord,355 , null);
         }
     }
 
